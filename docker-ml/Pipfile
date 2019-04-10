@@ -1,0 +1,52 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+pylint = "*"
+
+[packages]
+jupyter = "*"
+jupyter-client = "*"
+matplotlib = "*"
+numpy = "*"
+pandas = "*"
+python-dateutil = "*"
+scipy = "*"
+setuptools = "*"
+scikit-learn = {git = "git://github.com/scikit-learn/scikit-learn.git"}
+seaborn = "*"
+patsy = "*"
+"pymc3" = {git = "https://github.com/pymc-devs/pymc3.git"}
+pystan = "*"
+jupyterlab = "*"
+jupyter-contrib-nbextensions = "*"
+wheel = "*"
+lightgbm = "*"
+cookiecutter = "*"
+torch = "*"
+torchvision = "*"
+gensim = "*"
+keras = "*"
+tensorflow-gpu = "*"
+tensorflow = "==2.0.0-alpha0"
+fbprophet = "*"
+fastai = "*"
+spacy = "*"
+jupyternotify = "*"
+tensorboard = "*"
+tensorboardx = "*"
+moviepy = "*"
+augmentor = "*"
+catboost = "*"
+isort = "*"
+nltk = "*"
+torchtext = "*"
+pymagnitude = "*"
+apache-airflow = "*"
+numba = "*"
+weather-api = "*"
+
+[requires]
+python_version = "3.6"

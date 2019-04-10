@@ -1,0 +1,16 @@
+version: "3"
+services:
+  python:
+    build: .
+    image: python-ml
+    container_name: ml
+    # environment:
+    #   - API_ENDPOINT_MECAB=http://52.196.5.52/api/v1/mecab
+    #   - DEPLOY_ENV=dev
+    ports:
+      - "9000:5000"
+    volumes:
+      - $PWD:/home/sandbox
+      # - $HOME/.aws/credentials:/home/sandbox/.aws/credentials
+    # command: /usr/sbin/init
+    tty: true
