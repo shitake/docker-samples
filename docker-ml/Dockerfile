@@ -57,6 +57,12 @@ RUN pip install --upgrade pip
 RUN pip install pipenv -U
 RUN mkdir /home/sandbox
 WORKDIR /home/sandbox
+COPY Pipfile .
+# COPY Pipfile.lock .
 RUN pipenv install --skip-lock
 
-CMD ["/bin/bash"]
+# Jupyter
+# COPY jupyter_notebook_config.py /.jupyter/jupyter_notebook_config.py
+COPY docker/entrypoint.sh /entrypoint.sh
+
+CMD ["/bin/bash", "/entrypoint.sh]
