@@ -5,7 +5,6 @@ services:
     image: python-ml
     container_name: ml
     # environment:
-    #   - API_ENDPOINT_MECAB=http://52.196.5.52/api/v1/mecab
     #   - DEPLOY_ENV=dev
     ports:
       - "9000:5000"
