@@ -1,0 +1,12 @@
+version: "3"
+services:
+  mlflow:
+    build: .
+    image: docker-mlflow
+    container_name: mlflow
+    ports:
+      - "5000:5000"
+    volumes:
+      - $PWD:/mlflow
+    command: mlflow server --backend-store-uri /mlflow --host 0.0.0.0
+    tty: true
