@@ -46,8 +46,8 @@ RUN \
   echo 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
 ENV PATH $PATH:/root/.pyenv/bin
 # Install Python
-RUN pyenv install 3.6.6
-RUN pyenv global 3.6.6
+RUN pyenv install 3.6.8
+RUN pyenv global 3.6.8
 RUN pyenv rehash
 ENV PATH $PATH:/root/.pyenv/shims
 RUN python -V
