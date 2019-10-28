@@ -1,0 +1,16 @@
+version: "3"
+services:
+  python:
+    build: .
+    image: ml-base
+    container_name: ml-base
+    # environment:
+    #   - DEPLOY_ENV=dev
+    ports:
+      - "9000:5000"
+      - "9088:8888"
+    volumes:
+      - $PWD:/home/sandbox
+        # - $PWD/docker/.jupyter/.jupyter:/.jupyter
+      # - $HOME/.aws/credentials:/home/sandbox/.aws/credentials
+    tty: true
