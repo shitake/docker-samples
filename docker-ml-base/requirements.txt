@@ -1,5 +1,7 @@
+dask==2.6.0
 jupyter==1.0.0
 kaggle==1.5.6
+lightgbm==2.3.0
 matplotlib==2.2.2
 numpy==1.17.3
 pandas==0.24.2
