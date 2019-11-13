@@ -1,10 +1,9 @@
-FROM python:3.7.0
+FROM continuumio/miniconda
 
-RUN mkdir /mlflow/
+WORKDIR /mlflow
+ADD . /mlflow
 
-RUN pip install --upgrade pip
-RUN pip install mlflow>=1.1.0
-
-CMD mlflow server \
-    --backend-store-uri /mlflow \
-    --host 0.0.0.0
+RUN apt-get update && apt-get install -y default-libmysqlclient-dev build-essential
+RUN pip install --upgrade pip && \
+    pip install -r dev-requirements.txt && \
+    pip install mlflow>=1.1.0
