@@ -8,24 +8,16 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
 # Install Python
 RUN add-apt-repository ppa:deadsnakes/ppa \
     && apt-get update \
-    && apt-get install -y python3.6
-RUN apt-get install python3-pip -y
-# RUN wget -O ./get-pip.py https://bootstrap.pypa.io/get-pip.py \
-#     && python3.6 ./get-pip.py
+    && apt-get install -y python3.6 \
+    && apt-get install python3-pip -y
 RUN ln -s /usr/bin/python3.6 /usr/local/bin/python3 \
     && ln -s /usr/bin/python3.6 /usr/local/bin/python \
-    && ln -s /usr/bin/pip3 /usr/local/bin/pip
-RUN pip install --upgrade pip
+    && ln -s /usr/bin/pip3 /usr/local/bin/pip \
+    && pip install --upgrade pip
 
 # Install common Python packages
 ADD ./requirements.txt /tmp
-RUN pip install setuptools -U && pip install -r /tmp/requirements.txt
-
-# Install TensorFlow
-RUN pip install tensorflow tensorflow-gpu
-
-# Install PyTorch
-RUN pip install torch torchvision
+RUN pip install setuptools -U && pip install -r /tmp/requirements.txt && pip install -U tensorflow tensorflow-gpu torch torchvision
 
 # Set working directory
 WORKDIR /root/user
