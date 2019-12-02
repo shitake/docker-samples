@@ -9,5 +9,5 @@ services:
       - "5001:5001"
     volumes:
       - $PWD:/mlflow
-    command: mlflow server --backend-store-uri /mlflow --host 0.0.0.0
+    command: mlflow server --host 0.0.0.0 --default-artifact-root ./mlruns
     tty: true
