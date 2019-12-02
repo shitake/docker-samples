@@ -30,7 +30,7 @@ numba = "*"
 pandas = "*"
 patsy = "*"
 pymagnitude = "*"
-"pymc3" = {git = "https://github.com/pymc-devs/pymc3.git"}
+pymc3 = {git = "https://github.com/pymc-devs/pymc3.git"}
 python-dateutil = "*"
 pystan = "*"
 pytest = "*"
@@ -47,8 +47,10 @@ tensorflow = "==2.0.0-alpha0"
 # torch = "*"
 # torchtext = "*"
 # torchvision = "*"
-weather-api = "*"
+# weather-api = "*"
 wheel = "*"
+mypy = "*"
+vaex = "*"
 
 [requires]
 python_version = "3.6.6"

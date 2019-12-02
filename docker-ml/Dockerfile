@@ -46,8 +46,8 @@ RUN \
   echo 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
 ENV PATH $PATH:/root/.pyenv/bin
 # Install Python
-RUN pyenv install 3.6.6
-RUN pyenv global 3.6.6
+RUN pyenv install 3.6.8
+RUN pyenv global 3.6.8
 RUN pyenv rehash
 ENV PATH $PATH:/root/.pyenv/shims
 RUN python -V
@@ -57,9 +57,9 @@ RUN pip install --upgrade pip
 RUN pip install pipenv -U
 RUN mkdir /home/sandbox
 WORKDIR /home/sandbox
-COPY Pipfile .
-# COPY Pipfile.lock .
-RUN pipenv install --skip-lock
+COPY Pipfile Pipfile
+# COPY Pipfile.lock Pipfile.lock
+RUN pipenv install --system --sequential --skip-lock
 
 # Jupyter
 # COPY jupyter_notebook_config.py /.jupyter/jupyter_notebook_config.py

@@ -2,8 +2,8 @@ version: "3"
 services:
   python:
     build: .
-    image: python-ml
-    container_name: ml
+    image: ml-base
+    container_name: ml-base
     # environment:
     #   - DEPLOY_ENV=dev
     ports:
@@ -11,7 +11,6 @@ services:
       - "9088:8888"
     volumes:
       - $PWD:/home/sandbox
-      - $PWD/docker/.jupyter/.jupyter:/.jupyter
+        # - $PWD/docker/.jupyter/.jupyter:/.jupyter
       # - $HOME/.aws/credentials:/home/sandbox/.aws/credentials
-    # command: /usr/sbin/init
     tty: true
