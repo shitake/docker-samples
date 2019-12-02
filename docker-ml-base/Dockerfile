@@ -28,9 +28,11 @@ RUN pip install tensorflow tensorflow-gpu
 RUN pip install torch torchvision
 
 # Set working directory
-WORKDIR /root/user
+WORKDIR /home/sandbox
 
 # Config and clean up
 RUN ldconfig \
     && apt-get clean \
     && apt-get autoremove
+
+CMD ["/bin/bash", "docker/entrypoint.sh]

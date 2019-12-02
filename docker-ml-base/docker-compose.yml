@@ -9,6 +9,6 @@ services:
       - "9088:8888"
     volumes:
       - $PWD:/home/sandbox
-        # - $PWD/docker/.jupyter/.jupyter:/.jupyter
       # - $HOME/.aws/credentials:/home/sandbox/.aws/credentials
+    command: /bin/bash docker/entrypoint.sh
     tty: true
