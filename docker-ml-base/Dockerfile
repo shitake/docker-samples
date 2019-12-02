@@ -27,4 +27,4 @@ RUN ldconfig \
     && apt-get clean \
     && apt-get autoremove
 
-CMD ["/bin/bash", "docker/entrypoint.sh]
+CMD ["/bin/bash", "docker/entrypoint.sh"]
