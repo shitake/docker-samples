@@ -1,0 +1,18 @@
+version: "3"
+services:
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile.pf
+    image: ml-base-pf
+    container_name: ml-base-pf
+    ports:
+      - "9000:5000"
+      - "9088:8888"  # Jupyter
+      - "9082:8082"  # luigid
+    volumes:
+      - $PWD:/home/sandbox
+      # - $HOME/.aws/credentials:/home/sandbox/.aws/credentials
+    working_dir: /home/sandbox
+    command: pipenv run entrypoint
+    tty: true

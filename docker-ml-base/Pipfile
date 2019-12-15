@@ -1,0 +1,28 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+dask = "==2.6.0"
+jupyter = "*"
+kaggle = "==1.5.6"
+lightgbm = "==2.3.0"
+matplotlib = "==2.2.2"
+numpy = "==1.17.3"
+pandas = "==0.24.2"
+seaborn = "==0.8.1"
+scikit-learn = "==0.21.3"
+scipy = "==1.1.0"
+setuptools = "*"
+six = "*"
+vaex = "*"
+wheel = "*"
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+entrypoint = '/bin/bash docker/entrypoint.sh'
