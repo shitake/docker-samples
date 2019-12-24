@@ -70,4 +70,4 @@ RUN ldconfig \
     && apt-get clean \
     && apt-get autoremove
 
-CMD ["pipenv" "run" "entrypoint"]
+CMD ["pipenv", "run", "entrypoint"]
