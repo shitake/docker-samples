@@ -14,5 +14,6 @@ services:
       - $PWD:/home/sandbox
       # - $HOME/.aws/credentials:/home/sandbox/.aws/credentials
     working_dir: /home/sandbox
-    command: pipenv run entrypoint
+    command: /bin/bash  # 初回のみコンテナ上で $ pipenv install する
+    # command: pipenv run entrypoint
     tty: true
