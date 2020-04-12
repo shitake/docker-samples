@@ -1,0 +1,17 @@
+version: "3"
+services:
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile.poet
+    image: ml-base-poet
+    container_name: ml-base-poet
+    ports:
+      - "9000:5000"
+      - "9088:8888"  # Jupyter
+      - "9082:8082"  # luigid
+    volumes:
+      - $PWD/../docker-python/$PROJECT_NAME:/home/$PROJECT_NAME
+    working_dir: /home/$PROJECT_NAME
+    command: bash
+    tty: true
