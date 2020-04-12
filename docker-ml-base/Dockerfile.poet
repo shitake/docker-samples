@@ -33,7 +33,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa \
 RUN update-locale LANG=ja_JP.UTF-8
 
 # If you need, create a virtual environment beforehand then copy it
-# COPY ./${PROJECT_NAME} /home/${PROJECT_NAME}
+# COPY ../docker-python/${PROJECT_NAME} /home/${PROJECT_NAME}
 WORKDIR /home/${PROJECT_NAME}
 
 # Config and clean up
