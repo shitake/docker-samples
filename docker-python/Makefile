@@ -4,7 +4,7 @@ env:
 	@$(eval IMAGE_NAME := poetry)
 	@$(eval CONTAINER_NAME := poetry)
 	@$(eval SET_WORKDIR := -w /poetry/${PROJECT_NAME})
-run:
+run: env
 	@docker run --name ${CONTAINER_NAME} -itd -v `pwd`:/poetry poetry
 init: run
 	@docker exec -it ${CONTAINER_NAME} poetry config virtualenvs.in-project true --local
