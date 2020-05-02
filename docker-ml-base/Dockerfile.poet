@@ -50,6 +50,9 @@ RUN pip install --upgrade pip
 # Poetry
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 ENV PATH /root/.poetry/bin:$PATH
+RUN poetry completions bash > /etc/bash_completion.d/poetry.bash-completion \
+    && poetry self update \
+    && poetry config virtualenvs.in-project true --local
 
 # Locale
 RUN add-apt-repository ppa:deadsnakes/ppa \
