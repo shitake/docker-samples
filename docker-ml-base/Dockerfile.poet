@@ -16,6 +16,7 @@ RUN apt-get update && apt-get upgrade -y \
         g++ \
         git \
         less \
+        liblzma-dev \
         make \
         nginx \
         software-properties-common \
